@@ -1,0 +1,26 @@
+export enum FSM_PARAMS_TYPE_ENUM {
+  NUMBER = 'NUMBER',
+  TRIGGER = 'TRIGGER'
+}
+
+export enum CELL_TYPE_ENUM {
+  YELLOW = 'YELLOW',
+  BLUE = 'BLUE',
+  RED = 'RED',
+  GREEN = 'GREEN',
+}
+
+export enum EVENT_ENUM {
+  CHOOSE_CELL
+}
+
+
+export enum CELL_STATE_ENUM {
+  IDLE,
+  CHOOSE,
+  SWAP_TOP,
+  SWAP_BOTTOM,
+  SWAP_LEFT,
+  SWAP_RIGHT,
+  COLLAPSE
+}
