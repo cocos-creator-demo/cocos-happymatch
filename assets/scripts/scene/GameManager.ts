@@ -1,4 +1,4 @@
-import {_decorator, Component, Node} from 'cc';
+import {_decorator, Component, Node, Camera} from 'cc';
 import {createUINode} from "../utils";
 import {MapManager} from "../ui/MapManager";
 import {CELL_TYPE_ENUM} from "../enum";
@@ -7,6 +7,9 @@ const {ccclass, property} = _decorator;
 
 @ccclass('GameManager')
 export class GameManager extends Component {
+  @property(Camera)
+  camera: Camera
+
   onLoad() {
     this.initMap()
   }
@@ -20,13 +23,13 @@ export class GameManager extends Component {
     const {YELLOW, BLUE, RED, GREEN} = CELL_TYPE_ENUM
     const config = {
       cells: [
-        [{type: YELLOW}, {type: BLUE}, {type: RED}, {type: GREEN},],
-        [{type: YELLOW}, {type: BLUE}, {type: RED}, {type: GREEN},],
-        [{type: BLUE}, {type: YELLOW}, {type: GREEN}, {type: RED},],
-        [{type: GREEN}, {type: GREEN}, {type: RED}, {type: RED},],
+        [{type: YELLOW}, {type: BLUE}, {type: RED}, {type: GREEN}],
+        [{type: YELLOW}, {type: BLUE}, {type: RED}, {type: GREEN}],
+        [{type: BLUE}, {type: YELLOW}, {type: GREEN}, {type: RED}],
+        [{type: GREEN}, {type: GREEN}, {type: RED}, {type: RED}]
       ]
     }
-    mapManager.init(config)
+    mapManager.init(config, this.camera)
 
 
   }
