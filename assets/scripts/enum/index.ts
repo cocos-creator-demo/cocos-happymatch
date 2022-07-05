@@ -8,6 +8,9 @@ export enum CELL_TYPE_ENUM {
   BLUE = 'BLUE',
   RED = 'RED',
   GREEN = 'GREEN',
+  GRAY = 'GRAY',
+  CYAN = 'CYAN',
+  MAGENTA = 'MAGENTA'
 }
 
 export enum EVENT_ENUM {
